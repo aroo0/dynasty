@@ -11,7 +11,6 @@ interface SmallVideoProps {
   data: iVideo;
   className?: string;
   setIsPlayerOpen: (url: string) => void;
-  onVideoLoad: (url: string) => void;
 }
 
 const SmallVideo: React.FC<SmallVideoProps> = ({
@@ -20,7 +19,6 @@ const SmallVideo: React.FC<SmallVideoProps> = ({
   data,
   className,
   setIsPlayerOpen,
-  onVideoLoad
 }) => {
   const onThisVideo = onMouseOverVideo === data.shortVersionUrl;
 
@@ -33,7 +31,6 @@ const SmallVideo: React.FC<SmallVideoProps> = ({
         onClick={() => setIsPlayerOpen(data.longUrl)}
       >
         <ReactPlayer
-        onPlay={() => onVideoLoad(data.shortVersionUrl)}
           url={data.shortVersionUrl}
           width="100%"
           height="100%"

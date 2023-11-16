@@ -5,6 +5,7 @@ import Nav from "@/components/Nav";
 import VideoGrid from "@/components/VideoGrid";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { twMerge } from "tailwind-merge";
 
 export default function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState<boolean>(false);
@@ -14,44 +15,51 @@ export default function Home() {
 
   const handleVideoLoad = (url: string) => {
     setLoadedPlayers((prev) => [...prev, url]);
-    console.log(loadedPlayers)
+    console.log(loadedPlayers);
   };
 
-  useEffect(() => {
-    if (loadedPlayers.length === 6) {
-      setLoading(false);
-    }
-  }, [loadedPlayers]);
+  // useEffect(() => {
+  //   if (loadedPlayers.length === 6) {
+  //     setLoading(false);
+  //   }
+  // }, [loadedPlayers]);
 
   return (
     <>
       <AnimatePresence>
         {loading && (
           <motion.div
-            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{duration: 1}}
+            transition={{ duration: 2 }}
           >
-            <LoadingScreen />
+            <LoadingScreen>
+              <div className="uppercase flex flex-col items-center z-[20] mt-10 cursor-pointer" onClick={() => setLoading(false)}>
+                <h2 className="font-medium  text-sm text-secondary">
+                  Łukasz Stokłosa
+                </h2>
+                <h1 className="text-xl font-bold text-foreground mt-[-6px]">
+                  Dynasty
+                </h1>
+              </div>
+            </LoadingScreen>
           </motion.div>
         )}
       </AnimatePresence>
       <>
-      <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{duration: 1}}
-          >
-        <header>
-          <Nav setIsAboutOpen={setIsAboutOpen} />
-        </header>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+        >
+          <header>
+            <Nav setIsAboutOpen={setIsAboutOpen} />
+          </header>
         </motion.div>
-        <main className="grid px-4 mx-auto max-w-[1720px] w-full grid-cols-4  xl:grid-cols-12 gap-x-[20px] l:gap-x-[30px]  gap-y-[5px] xl:h-[100vh] pt-20 pb-28 xl:pb-10 place-items-start	justify-items-center xl:justify-items-start auto-rows-fr ">
+        <main className={twMerge("grid px-4 mx-auto max-w-[1720px] w-full grid-cols-4  xl:grid-cols-12 gap-x-[20px] l:gap-x-[30px]  gap-y-[5px] xl:h-[100vh] pt-20 pb-28 xl:pb-10 place-items-start	justify-items-center xl:justify-items-start auto-rows-fr opacity-0 transition duration-[2s]", !loading && 'opacity-100')} >
           <VideoGrid
             setIsAboutOpen={setIsAboutOpen}
             isAboutOpen={isAboutOpen}
             setIsPlayerOpen={setIsPlayerOpen}
-            onVideoLoad={handleVideoLoad}
           />
         </main>
         <Modal isPlayerOpen={isPlayerOpen} setIsPlayerOpen={setIsPlayerOpen} />

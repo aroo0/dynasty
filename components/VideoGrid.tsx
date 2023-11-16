@@ -12,14 +12,12 @@ interface VideoGridProps {
   setIsAboutOpen: (value: boolean) => void;
   isAboutOpen: boolean;
   setIsPlayerOpen: (value: string) => void;
-  onVideoLoad: (url: string) => void;
 }
 
 const VideoGrid: React.FC<VideoGridProps> = ({
   setIsAboutOpen,
   isAboutOpen,
   setIsPlayerOpen,
-  onVideoLoad
 }) => {
   const [isClient, setIsClient] = useState(false);
   const [onMouseOverVideo, setOnMouseOverVideo] = useState<string>("");
@@ -69,7 +67,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           onMouseOverVideo={onMouseOverVideo}
           data={videos.wedding}
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
       <article className="col-start-3 col-span-2 row-start-5 mt-10 row-span-1 ml-2 xl:col-start-3 xl:col-span-2 xl:row-start-1 xl:row-span-3 h-[127px]  relative ">
@@ -78,7 +75,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           onMouseOverVideo={onMouseOverVideo}
           data={videos.intro}
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
 
@@ -88,7 +84,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           onMouseOverVideo={onMouseOverVideo}
           data={videos.belong}
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
 
@@ -98,7 +93,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           onMouseOverVideo={onMouseOverVideo}
           data={videos.sable}
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
       <article className="relative col-start-2 col-span-3 row-start-4 mt-4 row-span-1 xl:col-start-3 xl:col-span-4 xl:row-start-6 xl:row-span-3 h-[100px] xl:h-[170px] xl:mt-5 xl:mr-[100px] py-.5  xl:bg-black">
@@ -108,7 +102,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           data={videos.dinner}
           className="xl:mt-[-15px]"
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
       <article className="col-start-1 col-span-4 row-start-3 row-span-1 mt-8 relative xl:col-start-1 xl:col-span-5 xl:row-start-12 xl:row-span-3 h-[100px] xl:h-[180px] xl:mr-[100px] p-1 xl:bg-black">
@@ -118,7 +111,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           data={videos.supper}
           className="xl:mt-[-10px]"
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
       <article className="col-start-1 col-span-4 row-start-7 row-span-1 relative xl:col-start-9 xl:col-span-4 xl:row-start-6 xl:row-span-5 h-[180px] xl:h-[250px] xl:mt-28 xl:p-1 xl:bg-black ">
@@ -127,7 +119,6 @@ const VideoGrid: React.FC<VideoGridProps> = ({
           onMouseOverVideo={onMouseOverVideo}
           data={videos.adam}
           setIsPlayerOpen={setIsPlayerOpen}
-          onVideoLoad={onVideoLoad}
         />
       </article>
     </>
