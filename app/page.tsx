@@ -28,20 +28,8 @@ export default function Home() {
     <>
       <AnimatePresence>
         {loading && (
-          <motion.div
-            exit={{ opacity: 0 }}
-            transition={{ duration: 2 }}
-          >
-            <LoadingScreen>
-              <div className="uppercase flex flex-col items-center z-[20] mt-10 cursor-pointer" onClick={() => setLoading(false)}>
-                <h2 className="font-medium  text-sm text-secondary">
-                  Łukasz Stokłosa
-                </h2>
-                <h1 className="text-xl font-bold text-foreground mt-[-6px]">
-                  Dynasty
-                </h1>
-              </div>
-            </LoadingScreen>
+          <motion.div exit={{ opacity: 0 }} transition={{ duration: 2 }}>
+            <LoadingScreen onClick={setLoading} />
           </motion.div>
         )}
       </AnimatePresence>
@@ -55,7 +43,12 @@ export default function Home() {
             <Nav setIsAboutOpen={setIsAboutOpen} />
           </header>
         </motion.div>
-        <main className={twMerge("grid px-4 mx-auto max-w-[1720px] w-full grid-cols-4  xl:grid-cols-12 gap-x-[20px] l:gap-x-[30px]  gap-y-[5px] xl:h-[100vh] pt-20 pb-28 xl:pb-10 place-items-start	justify-items-center xl:justify-items-start auto-rows-fr opacity-0 transition duration-[2s]", !loading && 'opacity-100')} >
+        <main
+          className={twMerge(
+            "grid px-4 mx-auto max-w-[1720px] w-full grid-cols-4  xl:grid-cols-12 gap-x-[20px] l:gap-x-[30px]  gap-y-[5px] xl:h-[100vh] pt-20 pb-28 xl:pb-10 place-items-start	justify-items-center xl:justify-items-start auto-rows-fr opacity-0 transition duration-[2s]",
+            !loading && "opacity-100"
+          )}
+        >
           <VideoGrid
             setIsAboutOpen={setIsAboutOpen}
             isAboutOpen={isAboutOpen}
