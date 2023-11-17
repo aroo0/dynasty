@@ -116,7 +116,7 @@ const Player: React.FC<PlayerProps> = ({ setIsPlayerOpen, isPlayerOpen }) => {
     <div className="h-[100vh] w-full relative flex items-center">
       <Button
         className={twMerge(
-          "fixed top-3 right-3 sm:top-4 sm:right-4 transition",
+          "fixed top-4 right-4 transition",
           opacityVisible
             ? "duration-700 opacity-100"
             : "opacity-0 pointer-events-none"
@@ -125,9 +125,13 @@ const Player: React.FC<PlayerProps> = ({ setIsPlayerOpen, isPlayerOpen }) => {
       >
         Close
       </Button>
-      <div onClick={playPauseHandler} className="relative w-full h-[100vh] flex items-center justify-center px-4">
+      <div
+        onClick={playPauseHandler}
+        className="relative w-full h-[100vh] flex items-center justify-center px-4"
+      >
         {buffer && <Loader />}
         <ReactPlayer
+          playsInline
           onReady={onReady}
           url={isPlayerOpen}
           width="100%"
