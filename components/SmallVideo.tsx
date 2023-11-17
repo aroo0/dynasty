@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 import VideoDescription from "./VideoDescription";
 import { iVideo } from "@/app/types";
 
-
 interface SmallVideoProps {
   onMouseOverVideo: string;
   setOnMouseOverVideo: (url: string) => void;
@@ -31,6 +30,7 @@ const SmallVideo: React.FC<SmallVideoProps> = ({
         onClick={() => setIsPlayerOpen(data.longUrl)}
       >
         <ReactPlayer
+          playsInline
           url={data.shortVersionUrl}
           width="100%"
           height="100%"
