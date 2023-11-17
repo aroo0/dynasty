@@ -35,8 +35,10 @@ const Modal: React.FC<ModalProps> = ({ isPlayerOpen, setIsPlayerOpen }) => {
               exit={{ opacity: 0}}
               transition={{ duration: 0.7}}
             >
+                      <Dialog.Overlay>
+
               <Dialog.Content
-                className="w-full h-full fixed inset-0 bg-black"
+                className="w-full h-full fixed inset-0 bg-black overflow-auto"
                 forceMount
               >
                 <Player
@@ -44,6 +46,8 @@ const Modal: React.FC<ModalProps> = ({ isPlayerOpen, setIsPlayerOpen }) => {
                   isPlayerOpen={isPlayerOpen}
                 />
               </Dialog.Content>
+              </Dialog.Overlay>
+
             </motion.div>
           </Dialog.Portal>
         )}
