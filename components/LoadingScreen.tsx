@@ -12,6 +12,7 @@ const LoadingScreen: React.FC<LoadingScreenProps> = ({ onClick }) => {
           muted
           loop
           className="object-cover w-full h-full"
+          
         />
       </div>
 

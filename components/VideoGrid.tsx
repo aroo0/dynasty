@@ -51,7 +51,7 @@ const VideoGrid: React.FC<VideoGridProps> = ({
             >
               Close
             </Button>
-            <p className="text-secondary uppercase text-xs mt-2">
+            <p className="text-secondary uppercase text-[10px] sm:text-xs mt-2">
               A dynasty is a succession of rulers from the same family,
               typically maintaining power for several generations. These
               enduring familial regimes often leave a lasting imprint on the

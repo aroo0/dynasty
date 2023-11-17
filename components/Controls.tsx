@@ -36,7 +36,7 @@ const Controls: React.FC<ControlsProps> = ({
     <div className={twMerge("fixed bottom-0 w-full mb-2 sm:mb-6 flex gap-4 mx-auto transition duration-700", opacityVisible ? 'opacity-100' : 'opacity-0 pointer-events-none')}>
       <div className="flex gap-4 px-2 sm:px-14 w-full">
         <div className="flex gap-3 items-center w-full">
-          <ControlButton className="text-foreground" onClick={onPlayPause}>
+          <ControlButton className="text-foreground " onClick={onPlayPause}>
             {playing ? (
               <Pause size={12} fill="white" className="text-white opacity-80" />
             ) : (

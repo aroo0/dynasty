@@ -97,10 +97,10 @@ const Player: React.FC<PlayerProps> = ({ setIsPlayerOpen, isPlayerOpen }) => {
 
       timer = setTimeout(() => {
         setOpacityVisible(false);
-      }, 2000);
+      }, 2500);
     };
 
-    // window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     // Cleanup event listener on component unmount
     return () => {
