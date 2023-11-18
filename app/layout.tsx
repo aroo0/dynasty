@@ -7,7 +7,7 @@ import LoadingScreen from '@/components/LoadingScreen'
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.example.com'),
+  metadataBase: new URL('https://dynasty-drab.vercel.app/'),
 
   title: 'Dynasty | Łukasz Stokłosa',
   description: '',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
       type: "website",
-      url: "https://www.example.com",
+      url: "https://dynasty-drab.vercel.app/",
       title: "Dynasty | Łukasz Stokłosa",
       description: "",
       images: [{
