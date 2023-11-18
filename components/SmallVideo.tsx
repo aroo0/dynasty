@@ -30,7 +30,7 @@ const SmallVideo: React.FC<SmallVideoProps> = ({
         onMouseLeave={() => setOnMouseOverVideo("")}
         onClick={() => setIsPlayerOpen(data.longUrl)}
       >
-        <ReactPlayer
+        {/* <ReactPlayer
         key={data.shortVersionUrl}
         playsInline
           url={data.shortVersionUrl}
@@ -38,6 +38,16 @@ const SmallVideo: React.FC<SmallVideoProps> = ({
           height="100%"
           muted={true}
           autoplay
+          loop={true}
+        /> */}
+         <video
+        key={data.shortVersionUrl}
+        playsInline
+          src={data.shortVersionUrl}
+          width="100%"
+          height="100%"
+          muted={true}
+          autoPlay
           loop={true}
         />
       </button>
