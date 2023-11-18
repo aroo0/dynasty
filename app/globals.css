@@ -34,7 +34,7 @@ body,
 
 @layer base {
   :root {
-    --background: hsl(0, 0%, 3%);
+    --background: hsl(0, 0%, 0%);
     --foreground: hsla(0, 0%, 100%, 0.8);
     --muted: hsla(0, 0%, 29%, 0.5);
     --active: hsla(0, 0%, 14%, 0.8);

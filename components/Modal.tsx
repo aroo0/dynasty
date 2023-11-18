@@ -13,8 +13,6 @@ interface ModalProps {
 const Modal: React.FC<ModalProps> = ({ isPlayerOpen, setIsPlayerOpen }) => {
   const [isClient, setIsClient] = useState(false);
 
-  let dialogContainer: HTMLDivElement;
-
 
   useEffect(() => {
     setIsClient(true);
@@ -38,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({ isPlayerOpen, setIsPlayerOpen }) => {
                       <Dialog.Overlay>
 
               <Dialog.Content
-                className="w-full h-full fixed inset-0 bg-black overflow-auto"
+                className="w-full h-full fixed inset-0 bg-black"
                 forceMount
               >
                 <Player

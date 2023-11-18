@@ -131,6 +131,7 @@ const Player: React.FC<PlayerProps> = ({ setIsPlayerOpen, isPlayerOpen }) => {
       >
         {buffer && <Loader />}
         <ReactPlayer
+          key={isPlayerOpen}
           playsInline
           onReady={onReady}
           url={isPlayerOpen}
