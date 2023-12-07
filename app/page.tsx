@@ -3,7 +3,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import Modal from "@/components/Modal";
 import Nav from "@/components/Nav";
 import VideoGrid from "@/components/VideoGrid";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
@@ -11,18 +11,6 @@ export default function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
   const [isPlayerOpen, setIsPlayerOpen] = useState<string>("");
-  const [loadedPlayers, setLoadedPlayers] = useState<string[]>([]);
-
-  const handleVideoLoad = (url: string) => {
-    setLoadedPlayers((prev) => [...prev, url]);
-    console.log(loadedPlayers);
-  };
-
-  // useEffect(() => {
-  //   if (loadedPlayers.length === 6) {
-  //     setLoading(false);
-  //   }
-  // }, [loadedPlayers]);
 
   return (
     <>
